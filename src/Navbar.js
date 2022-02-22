@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 
 export default function Navbar(){
  
-  const favList = useSelector((state)=>state.favList)
+  const favList = useSelector((state)=>state.star.favList)
 
     return(
         <>

@@ -11,7 +11,7 @@ export default function FavMovies(){
 
     const [movies, setMovies] = useState([]);
   const favMovies = useSelector((state) => {
-    return state.favList;  //favList
+    return state.star.favList;  //favList
   });
 
   
@@ -48,7 +48,7 @@ export default function FavMovies(){
                     <Card key={movie.id}
                     title = {movie.title} 
                     photo ={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                    ID={movie.id}
+                    id={movie.id}
                     ></Card>
 
                    

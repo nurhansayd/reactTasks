@@ -3,17 +3,18 @@ import {AiOutlineStar , AiFillStar} from "react-icons/ai"
 
 import {useSelector , useDispatch} from "react-redux"
 import { starAction } from "./store/starAction";
+
 export default function Card(props){
 
   const favMovies = useSelector((state) => {
-    return state.favList;
+    return state.star.favList;
   });
   const dispatch = useDispatch();
 
   const handleFav = (id) => {
     if (favMovies.includes(id)) {
       const index = favMovies.indexOf(id);
-      console.log(index);
+      //console.log(index);
       favMovies.splice(index, 1);
       dispatch(starAction([...favMovies]));
     } else {
@@ -22,7 +23,7 @@ export default function Card(props){
   };
 
 
-  //const dispatch = useDispatch();
+  
  
   
   
@@ -36,21 +37,21 @@ export default function Card(props){
  
     <h5 class="card-title">{props.title}</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <Link to={`/moviedetails/${props.ID}`}><button class="btn btn-primary">Details</button> </Link>
+    <Link to={`/moviedetails/${props.id}`}><button class="btn btn-primary">Details</button> </Link>
 
 
-    {favMovies.includes(props.ID) ? (
+    {favMovies.includes(props.id) ? (
                       <AiFillStar
                         className="text-warning float-end fs-3"
                         onClick={() => {
-                          handleFav(props.ID);
+                          handleFav(props.id);
                         }}
                       />
                     ) : (
                       <AiOutlineStar
                         className="text-warning float-end fs-3"
                         onClick={() => {
-                          handleFav(props.ID);
+                          handleFav(props.id);
                         }}
                       />
                     )}

@@ -1,5 +1,3 @@
-
-
 export const starAction = (payload)=>{
 
     return{
@@ -7,3 +5,8 @@ export const starAction = (payload)=>{
         payload
     }
 }
+
+/*
+
+
+*/
